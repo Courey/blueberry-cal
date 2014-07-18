@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require_relative 'lib/month'
+
+month = ARGV[0].to_i
+year = ARGV[1].to_i
+
+month = Month.new(12, 2013)
+puts month.to_s
