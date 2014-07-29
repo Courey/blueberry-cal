@@ -11,16 +11,18 @@ RSpec.describe Month do
       month.header.should == "     July 1901"
     end
   end
-  # context ".add_proper_spacing" do
-  #   it "should add proper spacing to a weeks worth of days" do
-  #
-  #
-  #   end
-  # end
+
   context ".month_array" do
-    it "shouldn't work right now" do
+    it "should be an array of the days in proper indices" do
       month = Month.new(1, 2000)
       month.month_array.should == [0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 0, 0, 0, 0, 0]
+    end
+  end
+
+  context ".month_array" do
+    it "testing pesky october" do
+      month = Month.new(10, 2012)
+      month.month_array.should == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     end
   end
 

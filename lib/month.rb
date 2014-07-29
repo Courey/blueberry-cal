@@ -17,11 +17,14 @@ class Month
   end
 
   def to_s
+
     output = header
     output << "\nSu Mo Tu We Th Fr Sa"
 
     whole_month = month_array
-    #month_array could go here
+
+
+    # I need to make this a loop instead
     row1 = add_proper_spacing(whole_month.slice(0, 7))
     output << row1
     row2 = add_proper_spacing(whole_month.slice(7, 7))
@@ -51,7 +54,7 @@ class Month
   def month_length
     if @month == 4 || @month == 6 || @month == 9 || @month == 11
       30
-    elsif @month == 1 || @month == 3 || @month == 5 || @month == 7 || @month == 8 || @month == 12
+    elsif @month == 1 || @month == 3 || @month == 5 || @month == 7 || @month == 8 || @month == 12 || @month == 10
       31
     else
       if (@year % 4 == 0 && @year % 100 != 0|| @year % 400 == 0)
@@ -96,13 +99,7 @@ class Month
     week = week.chop
     # week = week.strip
     week = "\n#{week}"
-
-
     week
-
   end
-
-
-
 
 end

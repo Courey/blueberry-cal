@@ -22,8 +22,5 @@ RSpec.describe Zeller do
       actual = Zeller.calculate(7, 21, 2014)
       actual.should == expected
     end
-    # it "returns z for a" do
-    #   ...
-    # end
   end
 end

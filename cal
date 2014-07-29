@@ -1,9 +1,30 @@
 #!/usr/bin/env ruby
 
+require_relative 'lib/year'
 require_relative 'lib/month'
 
-month = ARGV[0].to_i
-year = ARGV[1].to_i
+if ARGV.length == 1
+  year = ARGV[0].to_i
 
-month = Month.new(12, 2013)
-puts month.to_s
+  if year < 1800 || year >= 3001
+    puts "#{year} is not between 1800 and 3000"
+  else
+    year = Year.new(year)
+    puts year.to_s
+  end
+
+elsif ARGV.length >= 3
+  puts "too many arguments, please enter a month and year"
+
+else
+  month = ARGV[0].to_i
+  year = ARGV[1].to_i
+  if month >= 13
+    puts "#{month} is not a valid month"
+  elsif year < 1800 || year >= 3001
+    puts "#{year} is not between 1800 and 3000"
+  else
+    month = Month.new(month, year)
+    puts month.to_s
+  end
+end
